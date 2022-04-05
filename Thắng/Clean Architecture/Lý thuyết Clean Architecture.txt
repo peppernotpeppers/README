@@ -1,0 +1,25 @@
+Clean Architecture xây dựng trên tư tưởng "độc lập" kết hợp với thiết kế theo hướng đối tượng.
+*Độc lập là project sẽ không phụ thuộc vào framework và công cụ
+
+Có 4 cấu trúc chính và 1 quy tắc:
+  -Quy tắc : các layer ở trong sẽ không biết bất cứ điều gì về các layer bên ngoài
+  -Entites : Mô tả các business logic. Layer quan trong nhất
+	(layer giải quyết các vấn đề, mục đích xây dựng phần mềm)
+  -Use case : Chứa các rule liên quan trực tiếp tới ứng dụng cục bộ 
+  -Interface adapter : tập hợp các "Adapter" để tương tác với công nghệ
+	(các adapter có thể là: controllers, gateways, modem)
+  -Framework và drivers: Database, UI, chỉ thao tác ở tầng này, không lập trình nhiều.
+
+Lợi ích của Clean Architecture:
+ - code mạch lạc dễ xem
+ - Linh hoạt vì không phụ thuộc và framework, server
+ - Dễ kiểm thử
+
+Hạn chế:
+ - Không thể áp dụng framework theo kiểu mì ăn liền - dùng framework làm tất cả mọi thứ
+ - Khó áp dụng
+ - Cồng kềnh vì có nhiều class
+
+
+Cụ thể hơn về Clean Architecture:
+https://www.youtube.com/watch?v=wtCQalq7L-E&ab_channel=PyLondinium
