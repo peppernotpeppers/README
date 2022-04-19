@@ -1,10 +1,10 @@
 import psycopg2
-from FakeFuntionOfDrug import fake, EffectOfDrug, DrugQuatityStatus, RandomGender
+import configDB
+from FakeFunctionOfDrug import fake, EffectOfDrug, DrugQuatityStatus, RandomGender
 
 # fake = Faker()
 
-conn = psycopg2.connect(database="dbo.drugtest", user="postgres", password="nam1ahai", host="127.0.0.1", port="5432")
-print ("Opened database successfully")
+conn = configDB
 cur = conn.cursor()
 
 # Tạo vòng lặp 'for' để ném data vào bảng tbl_drug
