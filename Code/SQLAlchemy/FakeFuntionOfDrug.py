@@ -5,7 +5,6 @@ from faker.providers import BaseProvider
 fake = Faker()
 
 class EffectOfDrug(BaseProvider):
-    
     def effectName ():
         useAbleNameOfDrug = [
             'Đau bụng','Đau đầu','Đau tay','Đau trĩ','Đau chân','Đau răng','Đau tim','Đau gan','Đau thận','Ốm, sốt cao',
@@ -19,26 +18,27 @@ class EffectOfDrug(BaseProvider):
 
 
 class DrugQuatityStatus (BaseProvider):
-    
     def quatityStatus ():
         stockStatus = [
             'Available', 'Out Of Stock'
         ]
         return random.choice(stockStatus)
 
+class RandomGender (BaseProvider):
+    def gender ():
+        numberOfGender = [
+            'Male', 'Female'
+        ]
+        return random.choice(numberOfGender)
+
 
 fake.add_provider(EffectOfDrug)      #Add thêm provider vào faker (nguồn từ EffectOfDrug)
 fake.add_provider(DrugQuatityStatus) #Add thêm provider vào faker (nguồn từ DrugQuantityStatus)
+fake.add_provider(RandomGender)
+
 
 seteffectName  = EffectOfDrug.effectName()
 setquantityStatus = DrugQuatityStatus.quatityStatus()
 
-def get_shuffled_effect():
-    random.shuffle(seteffectName)      #Biến đổi tuple tại effectName thành list
-    return seteffectName
 
-
-def get_shuffled_quatity():
-    random.shuffle(setquantityStatus)      #Biến đổi tuple tại setquantityStatus thành list
-    return setquantityStatus
 
